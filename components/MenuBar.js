@@ -24,86 +24,86 @@ export default class MenuBar extends Component {
   render() {
     return (
       <Menu size='large' inverted>
-          <Link route='/'>
-              <a className='item'>Home</a>
+        <Link route='/'>
+          <a className='item'>Trang chủ</a>
+        </Link>
+
+        <Menu.Menu position='right'>
+          <Link route='/dashboard'>
+            <a className='item'>Bảng Điều Khiển</a>
           </Link>
 
-          <Menu.Menu position='right'>
-            <Link route='/dashboard'>
-                <a className='item'>Dashboard</a>
-            </Link>
+          <Link route='/list'>
+            <a className='item'>Danh Sách Bảng Ghi</a>
+          </Link>
 
-            <Link route='/list'>
-                <a className='item'>Records List</a>
-            </Link>
+          <Dropdown item text='Doctor'>
+            <Dropdown.Menu>
+              <Dropdown.Item>
+                <Link route='/'>
+                  <a style={{ color: 'black' }} onClick={this.onClickedDoctor}>Xem trang cá nhân</a>
+                </Link>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <Link route='/edit-doctor'>
+                  <a style={{ color: 'black' }}>Chỉnh sửa trang cá nhân</a>
+                </Link>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <Link route='/make-appointment'>
+                  <a style={{ color: 'black' }}>Đặt lịch hẹn</a>
+                </Link>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <Link route='/edit-appointment'>
+                  <a style={{ color: 'black' }}>Cập nhật lịch hẹn</a>
+                </Link>
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
 
-            <Dropdown item text='Doctor'>
-              <Dropdown.Menu>
-                <Dropdown.Item>
-                  <Link route='/'>
-                    <a style={{color:'black'}} onClick={this.onClickedDoctor}>View Profile</a>
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link route='/edit-doctor'>
-                    <a style={{color:'black'}}>Edit Profile</a>
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link route='/make-appointment'>
-                    <a style={{color:'black'}}>Make Appointment</a>
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link route='/edit-appointment'>
-                    <a style={{color:'black'}}>Update Appointment</a>
-                  </Link>
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            
-            <Dropdown item text='Patient'>
-              <Dropdown.Menu>
-                <Dropdown.Item>
-                  <Link route='/'>
-                    <a style={{color:'black'}} onClick={this.onClickedPatient}>View Profile</a>
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link route='/edit-patient'>
-                    <a style={{color:'black'}}>Edit Profile</a>
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link route='/approve-doctor'>
-                    <a style={{color:'black'}}>Allow Access</a>
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link route='/revoke-doctor'>
-                    <a style={{color:'black'}}>Revoke Access</a>
-                  </Link>
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+          <Dropdown item text='Patient'>
+            <Dropdown.Menu>
+              <Dropdown.Item>
+                <Link route='/'>
+                  <a style={{ color: 'black' }} onClick={this.onClickedPatient}>Xem trang các nhân</a>
+                </Link>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <Link route='/edit-patient'>
+                  <a style={{ color: 'black' }}>Chỉnh sửa trang cá nhân</a>
+                </Link>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <Link route='/approve-doctor'>
+                  <a style={{ color: 'black' }}>Cho phép truy cập</a>
+                </Link>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <Link route='/revoke-doctor'>
+                  <a style={{ color: 'black' }}>Thu hồi quyền truy cập</a>
+                </Link>
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
 
-            <Dropdown item text='Register'>
-              <Dropdown.Menu>
-                <Dropdown.Item>
-                  <Link route='/register-patient'>
-                    <a style={{color:'black'}}>Patient</a>
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link route='/register-doctor'>
-                    <a style={{color:'black'}}>Doctor</a>
-                  </Link>
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+          <Dropdown item text='Register'>
+            <Dropdown.Menu>
+              <Dropdown.Item>
+                <Link route='/register-patient'>
+                  <a style={{ color: 'black' }}>Bênh nhân</a>
+                </Link>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <Link route='/register-doctor'>
+                  <a style={{ color: 'black' }}>Bác sĩ</a>
+                </Link>
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
 
-          </Menu.Menu>
-      </Menu>  
+        </Menu.Menu>
+      </Menu>
     );
   }
 }

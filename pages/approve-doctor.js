@@ -8,13 +8,13 @@ class ApproveDoctor extends Component {
     state = {
         doctorAddr: '',
         loading: '',
-        errorMessage: '' 
+        errorMessage: ''
     };
 
     onSubmit = async event => {
         event.preventDefault();
 
-        this.setState({loading: true, errorMessage: ''});
+        this.setState({ loading: true, errorMessage: '' });
 
         try {
             const accounts = await web3.eth.getAccounts();
@@ -27,7 +27,7 @@ class ApproveDoctor extends Component {
             this.setState({ errorMessage: err.message });
         }
 
-        this.setState({ loading: false, doctorAddr: ''});
+        this.setState({ loading: false, doctorAddr: '' });
     }
 
     render() {
@@ -35,19 +35,19 @@ class ApproveDoctor extends Component {
             <Layout>
                 <Segment>
                     <Header
-                            as='h2'
-                            content='Allow Access'
-                            subheader='Give doctor or patient permission to view records'
+                        as='h2'
+                        content='Allow Access'
+                        subheader='Give doctor or patient permission to view records'
                     ></Header>
-                    <Input 
+                    <Input
                         fluid
-                        placeholder = "Doctor's Ethereum Address"
-                        value= {this.state.doctorAddr}
-                        onChange= {event => 
-                            this.setState({ doctorAddr: event.target.value })}  
-                    /><br/>
+                        placeholder="Doctor's Ethereum Address"
+                        value={this.state.doctorAddr}
+                        onChange={event =>
+                            this.setState({ doctorAddr: event.target.value })}
+                    /><br />
                     <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
-                        <Message error header="Oops!" content={this.state.errorMessage}/>
+                        <Message error header="Oops!" content={this.state.errorMessage} />
                         <Button primary loading={this.state.loading}>Approve</Button>
                     </Form>
                 </Segment>
